@@ -21,3 +21,14 @@ class ConversorMoneda:
             raise ValueError("Moneda no válida")
 
         return monto * tasa
+
+if __name__ == "__main__":
+    conversor = ConversorMoneda()
+    try:
+        monto=float(input("Ingrese monto: "))
+        moneda_origen=input("Ingrese moneda origen (USD o EUR o JPY): ")
+        moneda_destino=input("Ingrese moneda destino (USD o EUR o JPY): ")
+        cambio = conversor.convertir(monto, moneda_origen, moneda_destino)
+        print(f"{monto} {moneda_origen} es {cambio} {moneda_destino}")
+    except ValueError:
+        print ("\n\nIngrese los datos correctos")
